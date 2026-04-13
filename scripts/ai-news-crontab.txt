@@ -1,0 +1,16 @@
+# AI 领域每日动态 - 定时任务配置
+# 每天上午 9 点自动生成 AI 日报
+
+# 编辑方法：
+# 1. 运行：crontab -e
+# 2. 复制下方任务配置
+# 3. 保存退出
+
+# 每天早上 9 点运行（推荐）
+0 9 * * * cd /home/admin/.openclaw/workspace && source venv-ai-news/bin/activate && python scripts/ai-news-daily.py >> logs/ai-news-daily.log 2>&1
+
+# 或者每天凌晨 2 点运行（备选）
+# 0 2 * * * cd /home/admin/.openclaw/workspace && source venv-ai-news/bin/activate && python scripts/ai-news-daily.py >> logs/ai-news-daily.log 2>&1
+
+# 测试运行（仅首次配置时使用）
+# */5 * * * * cd /home/admin/.openclaw/workspace && source venv-ai-news/bin/activate && python scripts/ai-news-daily.py >> logs/ai-news-daily-test.log 2>&1

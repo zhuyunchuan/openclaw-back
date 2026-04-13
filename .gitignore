@@ -1,0 +1,69 @@
+# OpenClaw Backup .gitignore
+
+## 🔐 敏感信息（禁止上传）
+# API Keys 和 Tokens
+*.env
+.env
+.env.local
+*.key
+*.secret
+*.token
+credentials.json
+config.local.json
+
+# OpenClaw 配置中的敏感部分
+.openclaw/openclaw.json
+.openclaw/identity/
+.openclaw/devices/
+.openclaw/cron/
+
+## 📦 虚拟环境
+venv*/
+.venv*/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+## 📁 大型文件
+*.amr
+*.ogg
+*.mp3
+*.wav
+*.mp4
+*.mov
+*.avi
+media/
+*.log
+logs/
+
+## 🗑️ 临时文件
+*.tmp
+*.bak
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+## 📝 个人笔记（可选）
+memory/
+MEMORY.md
+
+## 📊 子 git 仓库（单独管理）
+buffett-letters/
+buffetts_brain/
+xhs-monitor/
+
+## 📊 数据文件
+*.sqlite
+*.db
+delivery-queue/
+
+## 🔧 编辑器
+.vscode/
+.idea/
+*.swo
+*.swn

@@ -1,0 +1,20 @@
+{
+  "accounts": [
+    {
+      "name": "路飞的船长日志",
+      "biz_id": "",
+      "note": "请从文章链接中获取 __biz 参数并填入此处"
+    }
+  ],
+  "getnote": {
+    "enabled": true,
+    "auto_save": true,
+    "title_prefix": true
+  },
+  "schedule": {
+    "enabled": false,
+    "interval_hours": 2,
+    "cron": "0 */2 * * *"
+  },
+  "last_checked": {}
+}
