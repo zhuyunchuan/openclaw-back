@@ -48,6 +48,10 @@ logs/
 .DS_Store
 Thumbs.db
 
+## 📊 追踪日志（但保留 gbrain 追踪）
+logs/gbrain-tracking.md
+!logs/*.log
+
 ## 📝 个人笔记（可选）
 memory/
 MEMORY.md

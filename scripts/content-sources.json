@@ -1,0 +1,24 @@
+{
+  "sources": [
+    {
+      "type": "zsxq",
+      "name": "示例星球",
+      "group_id": "YOUR_GROUP_ID",
+      "access_token": "YOUR_ZSXQ_TOKEN",
+      "topic_id": "XyYvqPnN",
+      "_说明": "group_id 从知识星球网页版URL获取；access_token 从浏览器cookie中提取 zsxq_access_token"
+    },
+    {
+      "type": "wechat",
+      "name": "示例公众号",
+      "mp_id": "YOUR_MP_ID",
+      "topic_id": "XyYvqPnN",
+      "_说明": "mp_id 是公众号的biz参数；需要在RSSHub中配置微信cookie"
+    }
+  ],
+  "_使用说明": {
+    "zsxq": "知识星球。group_id: 从 https://wx.zsxq.com/dweb2/index/group_id 获取。access_token: 浏览器登录后 cookie 中的 zsxq_access_token",
+    "wechat": "微信公众号。mp_id: 公众号的 __biz 参数。需要 RSSHub 配置 COOKIE_WECHAT_MP",
+    "rss": "通用RSS。url: RSS feed 地址"
+  }
+}

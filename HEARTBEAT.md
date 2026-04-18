@@ -1,13 +1,59 @@
 # HEARTBEAT.md
 
-# Keep this file empty (or with only comments) to skip heartbeat API calls.
+---
 
-# Add tasks below when you want the agent to check something periodically.
+## 📰 AI 日报检查
+- 检查今天 09:00 的 AI 日报是否正常生成
+- 如有失败，排查并重新运行
 
 ---
 
-## 🐦 Twitter/X AI 动态检查
+## 🧠 进化检查（每次心跳）
+- 扫描 `.learnings/ERRORS.md` 是否有未处理条目
+- 如果有同类错误 >3 次，提炼根因
 
-- 每天中午 12 点左右检查是否有昨天的 Twitter 总结
-- 如果有新总结，发送 DingTalk 消息通知用户查看 Get 笔记
-- 检查文件：`/home/admin/.openclaw/workspace/TWITTER-REAL-SUMMARY-*.md`
+---
+
+## 📚 知识库自动整理（每次心跳）
+- 调用 Get 笔记 API 获取最近未归类笔记（无知识库归属的）
+- 根据内容判断应归属哪个知识库，自动归类
+- 检查是否缺少标签，自动补充（标签 ≤ 10 中文字符）
+- 目标知识库映射：
+  - 投资相关 → 价值投资 (XyYvqPnN)
+  - AI/技术 → Ai &具身智能 (oYpEp190)
+  - 投资标的 → 投资标的资料库
+
+---
+
+## 🔄 结果反哺提醒（每次深度分析后）
+- 每次完成深度分析/研究/对比报告后
+- 自动询问用户是否存回知识库
+- 如用户确认，生成笔记并归入对应知识库
+- 标注来源（对话日期 + 触发问题）
+
+---
+
+## 🔄 OpenClaw 版本检查（每两周一次）
+- 检查 `memory/heartbeat-state.json` 中 `lastOpenClawCheck`，距上次 ≥14 天才执行
+- 只关注：重大版本发布、核心架构变更、安全修复
+- 如有重要更新，通知用户是否升级
+
+---
+
+## 📅 周日额外任务
+
+### 1. 知识库体检
+- 统计每个知识库笔记数量
+- 按主题分类，列出分布
+- 识别内容空白（用户常搜但笔记少的主题）
+- 生成索引笔记存回知识库
+- 通知用户体检结果
+
+### 2. 学习日志审查
+- 审查 `.learnings/` 下所有文件
+- 有价值的 → 提升到核心文件
+- 无用的 → 删除
+
+### 3. 记忆维护
+- 更新 MEMORY.md
+- 更新 EVOLUTION.md 周总结

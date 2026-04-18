@@ -1,0 +1,7 @@
+{
+  "bloggers": [
+    {"user_id": "PLACEHOLDER", "name": "示例博主", "topic_id": "oYpEp190"}
+  ],
+  "_说明": "user_id 从博主主页 URL 获取，如 https://www.xiaohongshu.com/user/profile/5f3b4e5d 中的 5f3b4e5d",
+  "_topic_id": "默认存入 Ai &具身智能知识库，可按博主单独指定"
+}

@@ -443,13 +443,30 @@ def save_to_file(md_content, date_str):
     return md_file
 
 def upload_to_getnote(md_content, date_str):
-    """上传到 Get 笔记"""
+    """上传到 Get 笔记（带去重检查）"""
     try:
         headers = {
             'Authorization': GETNOTE_API_KEY,
             'X-Client-ID': GETNOTE_CLIENT_ID,
             'Content-Type': 'application/json'
         }
+        
+        # 去重：检查是否已存在同标题笔记
+        try:
+            search_resp = requests.get(
+                'https://openapi.biji.com/open/api/v1/resource/note/list',
+                headers={'Authorization': GETNOTE_API_KEY, 'X-Client-ID': GETNOTE_CLIENT_ID},
+                params={'page': 1, 'page_size': 10}
+            )
+            existing = search_resp.json()
+            if existing.get('success'):
+                target_title = f'📰 AI 领域每日动态 - {date_str}'
+                for n in existing.get('data', {}).get('notes', []):
+                    if n.get('title') == target_title:
+                        print(f"⏭️ 笔记已存在，跳过创建：{n.get('id')}")
+                        return n.get('id')
+        except Exception as e:
+            print(f"⚠️ 去重检查失败，继续创建：{e}")
         
         # 创建笔记
         data = {

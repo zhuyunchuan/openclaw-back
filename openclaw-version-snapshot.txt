@@ -1,0 +1,22 @@
+=== OpenClaw Version Snapshot ===
+OpenClaw 2026.3.13 (61d171a)
+
+=== Node/NPM ===
+v22.22.1
+10.9.4
+
+=== Cron ===
+0 9 * * * cd /home/admin/.openclaw/workspace && source venv-ai-news/bin/activate && python scripts/ai-news-daily.py >> logs/ai-news-daily.log 2>&1
+# OpenClaw 周备份 - 每周日凌晨 2 点执行
+0 2 * * 0 /home/admin/.openclaw/workspace/scripts/weekly-backup.sh
+# GLM 模型切换提醒 - 4 月 23 日 9:00
+0 9 23 4 * /home/admin/.openclaw/workspace/scripts/reminder-glm-decision.sh >> logs/glm-reminder.log 2>&1
+# GBrain 项目周追踪 - 每周日 22:00
+0 22 * * 0 /home/admin/.openclaw/workspace/scripts/gbrain-weekly-tracker.sh
+0 10 * * * /home/admin/.openclaw/workspace/scripts/check-glm-models.sh >> /home/admin/.openclaw/workspace/logs/glm-models-check.log 2>&1
+# 统一内容源监控（知识星球+公众号+RSS）
+30 9,21 * * * cd /home/admin/.openclaw/workspace && source venv-ai-news/bin/activate && python scripts/content-monitor.py >> logs/content-monitor.log 2>&1
+
+=== Docker ===
+rsshub diygod/rsshub:latest Up 6 minutes
+searxng searxng/searxng:latest Up 3 weeks
