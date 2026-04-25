@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "skills": {
+    "zsxq-group": {
+      "source": "unnoo/zsxq-skill",
+      "sourceType": "github",
+      "computedHash": "c3df0307a9d41729e28fdf4608134c069da4e76ea89aa390777dc196ee72ac3a"
+    },
+    "zsxq-note": {
+      "source": "unnoo/zsxq-skill",
+      "sourceType": "github",
+      "computedHash": "7bad986f06bd6c3582984eb7fc2c1ca9ff3a8bd4b63b9dda9aa2fefa87a56e9f"
+    },
+    "zsxq-shared": {
+      "source": "unnoo/zsxq-skill",
+      "sourceType": "github",
+      "computedHash": "ccc3461e48ce5bcde2d6efc3b1a8b333887196f26c4da2dc8a9947b5c9602467"
+    },
+    "zsxq-topic": {
+      "source": "unnoo/zsxq-skill",
+      "sourceType": "github",
+      "computedHash": "610182aa7d8850d2d4df08a76339bb0974fc8d1697a350230558368c7de99d14"
+    },
+    "zsxq-user": {
+      "source": "unnoo/zsxq-skill",
+      "sourceType": "github",
+      "computedHash": "be8a8f186455e1aea343e596e213d83bae93232a27c7225120a8a2271109f0cc"
+    }
+  }
+}
